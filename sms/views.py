@@ -13,10 +13,14 @@ def home(request):
         to =  phone
         client = Client(settings.TWILIO_ACCOUNT_SID, settings.TWILIO_AUTH_TOKEN)
         response = client.messages.create(
-            body='Hello testing twilio in Django',
+            body='Hello testing twilio in Django '+ "www.google.com",
             to=to, from_=settings.TWILIO_PHONE_NUMBER)
         return render(request, 'index.html', {'confirm_message': confirm_message})
-   
+    # to = "+91 9306264279" 
+    # client = Client(settings.TWILIO_ACCOUNT_SID, settings.TWILIO_AUTH_TOKEN)
+    # response = client.messages.create(
+    #     body='Hello testing twilio in Django',
+    #     to=to, from_=settings.TWILIO_PHONE_NUMBER)
     
     
     return render(request, 'index.html')
